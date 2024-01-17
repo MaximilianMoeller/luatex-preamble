@@ -1,0 +1,45 @@
+% !TEX TS-program = lualatex
+% ^---- This should always be the first line of any lualatex project
+
+\documentclass{article}
+
+\input{../preamble/70-latex-verbatim.tex}
+% used for "latex-example"-example
+\usepackage{tikz}
+
+\input{../preamble/80-complexity-classes.tex}
+% required by the complexity-classes
+% TODO: where to actually put it
+\usepackage{xspace}
+
+
+
+
+\begin{document}
+
+% the outer tcblisting is used to display once, how the “latex-example”-environment is used in this document.
+\begin{tcblisting}{title=Usage of \texttt{latex-example} (for this document only).}
+	\begin{latex-example}[lefthand width=3.5cm]{Test123}
+	\begin{tikzpicture}
+	\path[fill=yellow!50!white] (0,0) circle (11mm);
+	\path[fill=white] (0,0) circle (9mm);
+	\foreach \w/\c in {90/red,210/green,330/blue}
+	{\path[shading=ball,ball color=\c] (\w:1cm) circle (7mm);}
+	\end{tikzpicture}
+	\end{latex-example}
+\end{tcblisting}
+
+\section{Complexity Classes}
+\begin{latex-example}{Complexity Classes}
+\PTime, \NP and \complclass{APX} are complexity classes.
+
+Clever spacing (\NP-complete),
+inline math mode ($\PTime \subseteq \NP$)
+and display style
+\[
+	\PTime \neq \ExpTime
+\]
+are supported.
+\end{latex-example}
+
+\end{document}

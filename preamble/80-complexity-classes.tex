@@ -1,0 +1,29 @@
+% Provides: Common style for computational complexity classes and definitions for the most common ones
+% TODO: Add copyright notice to Markus Krötzsch
+
+\hyphenation{Exp-Time} % prevents "Ex-PTime"
+\hyphenation{NExp-Time} 
+
+\DeclareMathAlphabet{\mathsc}{OT1}{cmr}{m}{sc}
+
+% Define a common style for complexity classes.
+% Also use this for less common classes inside the main document.
+\newcommand{\complclass}[1]{\ensuremath{\mathsc{#1}}\xspace}
+
+\newcommand{\ACzero}{\complclass{AC$_0$}}
+\newcommand{\LogSpace}{\complclass{L}}
+\newcommand{\NLogSpace}{\complclass{NL}}
+\newcommand{\PTime}{\complclass{P}}
+\newcommand{\NP}{\complclass{NP}}
+\newcommand{\coNP}{\complclass{coNP}}
+\newcommand{\PH}{\complclass{PH}}
+\newcommand{\PSpace}{\complclass{PSpace}}
+\newcommand{\NPSpace}{\complclass{NPSpace}}
+\newcommand{\ExpTime}{\complclass{ExpTime}}
+\newcommand{\NExpTime}{\complclass{NExpTime}}
+\newcommand{\ExpSpace}{\complclass{ExpSpace}}
+\newcommand{\TwoExpTime}{\complclass{2ExpTime}}
+\newcommand{\NTwoExpTime}{\complclass{N2ExpTime}}
+\newcommand{\ThreeExpTime}{\complclass{3ExpTime}}
+\newcommand{\kExpTime}[1]{\complclass{#1ExpTime}}
+\newcommand{\kExpSpace}[1]{\complclass{#1ExpSpace}}
