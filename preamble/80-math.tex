@@ -1,0 +1,57 @@
+% Provides: Mathematical packages, symbols, notation and shortcuts.
+% You will almost always need this, because, why would you write something else than math. ;-)
+% Requires: xspace
+
+%% Packages
+
+% For ‘DeclareMathOperator’-command, various alignment-environments (e.g. align, split, gather …),
+% better spacing around equality-signs, and many more. In short: indispensible.
+\usepackage{amsmath}
+
+% For better theorem-like-environments. Also defines a proof-environment.
+% Must be loaded after amsmath.
+\usepackage{amsthm}
+
+% Many more math symbols like \nsubseteq, \mapsto, \nexists, \hat{…} and many more.
+% Also the \mathbb{…} command for ‘blackboard boald’ character used for sets of numbers.
+% Implicitly loads amsfonts, “An extended set of fonts for use in mathematics […]”.
+\usepackage{amssymb}
+
+% Some more typesetting like ‘DeclarePairedDelimiter’, ‘\begin{cases}’,‘\overbrace{}’, ‘\mathclap{}’, …
+% (the latter is useful for reducing whitespaces that can occur in subscripts or exponents.)
+\usepackage{mathtools}
+
+% Provides a good default for the ‘\mathscr{…}’ font style.
+% TODO: Maybe customize with the ‘mathalpha’-package later.
+\usepackage{mathrsfs}
+
+% TODO: Add description about what this exactly does.
+% TODO: are there options to: 
+% 					- disable the warnings that this overwrites some ams-things
+% 					- make it overwrite all it can
+\usepackage{unicode-math}
+
+%% Numbers
+\NewDocumentCommand{\N}{}{\ensuremath{\mathbb{N}}\xspace}
+\NewDocumentCommand{\Z}{}{\ensuremath{\mathbb{Z}}\xspace}
+\NewDocumentCommand{\Q}{}{\ensuremath{\mathbb{Q}}\xspace}
+\NewDocumentCommand{\R}{}{\ensuremath{\mathbb{R}}\xspace}
+\NewDocumentCommand{\C}{}{\ensuremath{\mathbb{C}}\xspace}
+
+% Funktionen und variablen aus mehreren Buchstaben
+% use this for multi-letter variables/
+\newcommand{\var}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\func}[1]{\operatorname{#1}}
+
+\newcommand\questioneq{\stackrel{\text{?}}{=}}
+
+% MathOperator with a ‘*’ allows for ‘lim’-like notation with limits below in display math mode.
+% \max, \min, \sup, \inf are already pre-defined by amsmath
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\quantifier}{\style{display: inline-block; transform: scale(-1, 1)}{\mathsf{Q}}}
+\newcommand{\blank}{\not{b}}
+
+% File has been loaded.
+\toggletrue{80-math}
