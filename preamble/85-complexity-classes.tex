@@ -1,0 +1,60 @@
+% Provides: Common style for computational complexity classes and definitions for the most common ones
+% TODO: Add copyright notice to Markus Krötzsch
+
+\hyphenation{Exp-Time} % prevents “Ex-pTime”
+\hyphenation{NExp-Time} % prevents “NEx-pTime”
+\hyphenation{Exp-Space} % prevents “Ex-pSpace”
+\hyphenation{kExp-Time} % prevents “kEx-pTime” and “k-ExpTime”
+\hyphenation{NkExp-Time} % prevents “NkEx-pTime” and “N-kExpTime”
+\hyphenation{kExp-Space} % prevents “kEx-pSpace” and “k-ExpSpace”
+
+\DeclareMathAlphabet{\mathsc}{OT1}{cmr}{m}{sc}
+
+% Define a common style for complexity classes.
+% Also use this for less common classes inside the main document.
+\NewDocumentCommand{\complclass}{ m }{\ensuremath{\mathsc{#1}}\xspace}
+
+\NewDocumentCommand{\ACzero}		{}{\complclass{AC$_0$}}
+\NewDocumentCommand{\LogSpace}		{}{\complclass{L}}
+\NewDocumentCommand{\NLogSpace}		{}{\complclass{NL}}
+\NewDocumentCommand{\PTime}			{}{\complclass{P}}
+\NewDocumentCommand{\NP}			{}{\complclass{NP}}
+\NewDocumentCommand{\coNP}			{}{\complclass{coNP}}
+\NewDocumentCommand{\PH}			{}{\complclass{PH}}
+\NewDocumentCommand{\PSpace}		{}{\complclass{PSpace}}
+\NewDocumentCommand{\NPSpace}		{}{\complclass{NPSpace}}
+\NewDocumentCommand{\ExpTime}		{}{\complclass{ExpTime}}
+\NewDocumentCommand{\NExpTime}		{}{\complclass{NExpTime}}
+\NewDocumentCommand{\ExpSpace}		{}{\complclass{ExpSpace}}
+\NewDocumentCommand{\TwoExpTime}	{}{\complclass{2ExpTime}}
+\NewDocumentCommand{\NTwoExpTime}	{}{\complclass{N2ExpTime}}
+\NewDocumentCommand{\TwoExpSpace}	{}{\complclass{2ExpSpace}}
+
+% For tripple- and higher-exponential classes, use these.
+% If the optional argument is specified, typset e.g. ‘5ExpTime’ using the small caps font.
+% Otherwise, produce e.g. ‘kExpTime’, where the ‘k’ is typeset in the default math font.
+% The latter is occasionally useful when talking about all higher exponential classes.
+\NewDocumentCommand{\kExpTime}{ o }{
+	\IfValueTF {#1} {
+		\complclass{#1ExpTime}
+	} {
+		\ensuremath{k\mathsc{ExpTime}}\xspace
+	}
+}
+\NewDocumentCommand{\NkExpTime}{ o }{
+	\IfValueTF {#1} {
+		\complclass{N#1ExpTime}
+	} {
+		\ensuremath{\mathsc{N}k\mathsc{ExpTime}}\xspace
+	}
+}
+\NewDocumentCommand{\kExpSpace}{ o }{
+	\IfValueTF {#1} {
+		\complclass{#1ExpSpace}
+	} {
+		\ensuremath{k}\complclass{ExpSpace}
+	}
+}
+
+% File has been loaded.
+\toggletrue{85-complexity-classes}
