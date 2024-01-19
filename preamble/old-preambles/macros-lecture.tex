@@ -16,13 +16,13 @@
 % \setbeamerfont{normal text}{size=\small}
 % \setbeamerfont{itemize body}{size=\small}
 
-\renewcommand{\emph}[1]{\textbf{#1}}
+%\renewcommand{\emph}[1]{\textbf{#1}}
 
 \def\arraystretch{1.3}% Make tables even less cramped vertically
 
 \usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
 
 %\usepackage{graphicx}
 \usepackage[export]{adjustbox} % loads graphicx
@@ -38,33 +38,33 @@
 \MakePerPage{footnote}
 
 \usepackage{tikz}
-\usetikzlibrary{arrows,positioning,decorations.pathreplacing}
+%\usetikzlibrary{arrows,positioning,decorations.pathreplacing}
 % Inspired by http://www.texample.net/tikz/examples/hand-drawn-lines/
-\usetikzlibrary{decorations.pathmorphing}
-\pgfdeclaredecoration{penciline}{initial}{
-    \state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
-    auto corner on length=1mm,]{
-        \pgfpathcurveto%
-        {% From
-            \pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
-                      {\pgfdecorationsegmentamplitude}
-        }
-        {%  Control 1
-        \pgfmathrand
-        \pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
-                    {\pgfqpoint{-\pgfdecorationsegmentaspect
-                     \pgfdecoratedinputsegmentremainingdistance}%
-                               {\pgfmathresult\pgfdecorationsegmentamplitude}
-                    }
-        }
-        {%TO 
-        \pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
-        }
-    }
-    \state{final}{}
-}
-\tikzset{handdrawn/.style={decorate,decoration=penciline}}
-\tikzset{every shadow/.style={fill=none,shadow xshift=0pt,shadow yshift=0pt}}
+%\usetikzlibrary{decorations.pathmorphing}
+%\pgfdeclaredecoration{penciline}{initial}{
+%    \state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+%    auto corner on length=1mm,]{
+%        \pgfpathcurveto%
+%        {% From
+%            \pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+%                      {\pgfdecorationsegmentamplitude}
+%        }
+%        {%  Control 1
+%        \pgfmathrand
+%        \pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+%                    {\pgfqpoint{-\pgfdecorationsegmentaspect
+%                     \pgfdecoratedinputsegmentremainingdistance}%
+%                               {\pgfmathresult\pgfdecorationsegmentamplitude}
+%                    }
+%        }
+%        {%TO 
+%        \pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+%        }
+%    }
+%    \state{final}{}
+%}
+%\tikzset{handdrawn/.style={decorate,decoration=penciline}}
+%\tikzset{every shadow/.style={fill=none,shadow xshift=0pt,shadow yshift=0pt}}
 % \tikzset{module/.append style={top color=\col,bottom color=\col}}
 
 % Use to make Tikz attributes with Beamer overlays
@@ -89,6 +89,8 @@
 }
 
 %%% Table of contents:
+
+%%% Sehr clever! :)
 
 \RequirePackage{ifthen}
 
@@ -127,46 +129,46 @@ Siehe \href{\lectureurl}{course homepage [$\Rightarrow$ link]} for more informat
 
 %%% Colours:
 \usepackage{xcolor,colortbl}
-\definecolor{redhighlights}{HTML}{FFAA66}
-\definecolor{lightblue}{HTML}{55AAFF}
-\definecolor{lightred}{HTML}{FF5522}
-\definecolor{lightpurple}{HTML}{DD77BB}
-\definecolor{lightgreen}{HTML}{55FF55}
-\definecolor{darkred}{HTML}{CC4411}
-\definecolor{darkblue}{HTML}{176FC0}%{1133AA}
-\definecolor{nightblue}{HTML}{2010A0}%{1133AA}
-\definecolor{alert}{HTML}{176FC0}
-\definecolor{darkgreen}{HTML}{36AB14}
-\definecolor{strongyellow}{HTML}{FFE219}
-\definecolor{devilscss}{HTML}{666666}
+%\definecolor{redhighlights}{HTML}{FFAA66}
+%\definecolor{lightblue}{HTML}{55AAFF}
+%\definecolor{lightred}{HTML}{FF5522}
+%\definecolor{lightpurple}{HTML}{DD77BB}
+%\definecolor{lightgreen}{HTML}{55FF55}
+%\definecolor{darkred}{HTML}{CC4411}
+%\definecolor{darkblue}{HTML}{176FC0}%{1133AA}
+%\definecolor{nightblue}{HTML}{2010A0}%{1133AA}
+%\definecolor{alert}{HTML}{176FC0}
+%\definecolor{darkgreen}{HTML}{36AB14}
+%\definecolor{strongyellow}{HTML}{FFE219}
+%\definecolor{devilscss}{HTML}{666666}
 
-\newcommand{\redalert}[1]{\textcolor{darkred}{#1}}
+%\newcommand{\redalert}[1]{\textcolor{darkred}{#1}}
 
 %%% Style commands
 
 \newcommand{\quoted}[1]{\texttt{"}{#1}\texttt{"}}
 \newcommand{\squote}{\texttt{"}} % straight quote
-\newcommand{\Sterm}[1]{\ensuremath{\mathtt{\textcolor{purple}{#1}}}}    % letters in alphabets
-\newcommand{\Snterm}[1]{\textsf{\textcolor{darkblue}{#1}}} % nonterminal symbols
-\newcommand{\Sntermsub}[2]{\ensuremath{\Snterm{#1}_{\Snterm{#2}}}} % nonterminal symbols
-\newcommand{\Slang}[1]{\textbf{\textcolor{black}{#1}}}    % languages
-\newcommand{\Slangsub}[2]{\ensuremath{\Slang{#1}_{\Slang{#2}}}}    % languages
+%\newcommand{\Sterm}[1]{\ensuremath{\mathtt{\textcolor{purple}{#1}}}}    % letters in alphabets
+%\newcommand{\Snterm}[1]{\textsf{\textcolor{darkblue}{#1}}} % nonterminal symbols
+%\newcommand{\Sntermsub}[2]{\ensuremath{\Snterm{#1}_{\Snterm{#2}}}} % nonterminal symbols
+%\newcommand{\Slang}[1]{\textbf{\textcolor{black}{#1}}}    % languages
+%\newcommand{\Slangsub}[2]{\ensuremath{\Slang{#1}_{\Slang{#2}}}}    % languages
 % Code
-\newcommand{\Scode}[1]{\textbf{#1}}    % reserved words in program listings, e.g., "if"
-\newcommand{\Scodelit}[1]{\textcolor{purple}{#1}}    % literals in program listings, e.g., strings
-\newcommand{\Scomment}[1]{\textcolor{gray}{#1}}    % comment in program listings
+%\newcommand{\Scode}[1]{\textbf{#1}}    % reserved words in program listings, e.g., "if"
+%\newcommand{\Scodelit}[1]{\textcolor{purple}{#1}}    % literals in program listings, e.g., strings
+%\newcommand{\Scomment}[1]{\textcolor{gray}{#1}}    % comment in program listings
 
-\newcommand{\epstrastar}{\mathrel{\mathord{\stackrel{\epsilon}{\to}}{}^*}} % transitive reflexive closure of epsilon transitions in an epslion-NFA
+%\newcommand{\epstrastar}{\mathrel{\mathord{\stackrel{\epsilon}{\to}}{}^*}} % transitive reflexive closure of epsilon transitions in an epslion-NFA
 
-\newcommand{\narrowcentering}[1]{\mbox{}\hfill#1\hfill\mbox{}}
+%\newcommand{\narrowcentering}[1]{\mbox{}\hfill#1\hfill\mbox{}}
 
-\newcommand{\Smach}[1]{\ensuremath{\mathcal{#1}}}    % machines
+%\newcommand{\Smach}[1]{\ensuremath{\mathcal{#1}}}    % machines
 
-\newcommand{\mytrue}{\Scodelit{1}}
-\newcommand{\myfalse}{\Scodelit{0}}
+%\newcommand{\mytrue}{\Scodelit{1}}
+%\newcommand{\myfalse}{\Scodelit{0}}
 % \newcommand{\emptyClause}{\bot}
 
-\newcommand{\Scomplclass}[1]{{\textsc{#1}}} % font for complexity classes, used on slides where the "too many alphabets" LaTeX error appears when using the correct sc font :-(
+%\newcommand{\Scomplclass}[1]{{\textsc{#1}}} % font for complexity classes, used on slides where the "too many alphabets" LaTeX error appears when using the correct sc font :-(
 % \newcommand{\complclass}[1]{\ensuremath{\mathsc{#1}}} % font for complexity classes
 
 %%% Slide layout commands:
@@ -222,56 +224,56 @@ Siehe \href{\lectureurl}{course homepage [$\Rightarrow$ link]} for more informat
 
 % label=180:{\rotatebox{90}{{\footnotesize\textcolor{darkgreen}{Beispiel}}}}
 % \hspace{-8mm}\ghost{\raisebox{-7mm}{\rotatebox{90}{{\footnotesize\textcolor{darkgreen}{Beispiel}}}}}\hspace{8mm}
-\newcommand{\examplebox}[1]{%
-	\begin{tikzpicture}[decoration=penciline, decorate]
-		\pgfmathsetseed{1235}
-		\node (n1) [decorate,draw=darkgreen, fill=darkgreen!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#1};
-% 		\node (n2) [align=left,text width=\linewidth,inner sep=0mm] at (n1.92) {{\footnotesize\raisebox{3mm}{\textcolor{darkgreen}{Beispiel}}}};
-% 		\node (n2) [decorate,draw=darkgreen, fill=darkgreen!10,thick, align=left,text width=\linewidth,inner sep=2mm] at (n1.90) {{\footnotesize\raisebox{0mm}{\textcolor{darkgreen}{Beispiel}}}};
-	\end{tikzpicture}%
-}%
-
-\newcommand{\codebox}[1]{%
-	\begin{tikzpicture}[decoration=penciline, decorate]
-		\pgfmathsetseed{1236}
-		\node (n1) [decorate,draw=strongyellow, fill=strongyellow!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#1};
-	\end{tikzpicture}%
-}%
-
-\newcommand{\defbox}[1]{%
-	\begin{tikzpicture}[decoration=penciline, decorate]
-		\pgfmathsetseed{1237}
-		\node (n1) [decorate,draw=darkred, fill=darkred!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#1};
-	\end{tikzpicture}%
-}%
-
-\newcommand{\theobox}[1]{%
-	\begin{tikzpicture}[decoration=penciline, decorate]
-		\pgfmathsetseed{1240}
-		\node (n1) [decorate,draw=darkblue, fill=darkblue!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#1};
-	\end{tikzpicture}%
-}%
-
-\newcommand{\anybox}[2]{%
-	\begin{tikzpicture}[decoration=penciline, decorate]
-		\pgfmathsetseed{1240}
-		\node (n1) [decorate,draw=#1, fill=#1!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#2};
-	\end{tikzpicture}%
-}%
-
-
-\newsavebox{\mybox}%
-\newcommand{\doodlebox}[2]{%
-\sbox{\mybox}{#2}%
-	\begin{tikzpicture}[decoration=penciline, decorate]
-		\pgfmathsetseed{1238}
-		\node (n1) [decorate,draw=#1, fill=#1!10,thick,align=left,inner sep=1mm] at (0,0) {\usebox{\mybox}};
-	\end{tikzpicture}%
-}%
-\newcommand{\widedoodlebox}[2]{%
-\sbox{\mybox}{#2}%
-	\begin{tikzpicture}[decoration=penciline, decorate]
-		\pgfmathsetseed{1238}
-		\node (n1) [decorate,draw=#1, fill=#1!10,thick,align=left,inner sep=1mm,text width=\linewidth] at (0,0) {\usebox{\mybox}};
-	\end{tikzpicture}%
-}%
+%\newcommand{\examplebox}[1]{%
+%	\begin{tikzpicture}[decoration=penciline, decorate]
+%		\pgfmathsetseed{1235}
+%		\node (n1) [decorate,draw=darkgreen, fill=darkgreen!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#1};
+%% 		\node (n2) [align=left,text width=\linewidth,inner sep=0mm] at (n1.92) {{\footnotesize\raisebox{3mm}{\textcolor{darkgreen}{Beispiel}}}};
+%% 		\node (n2) [decorate,draw=darkgreen, fill=darkgreen!10,thick, align=left,text width=\linewidth,inner sep=2mm] at (n1.90) {{\footnotesize\raisebox{0mm}{\textcolor{darkgreen}{Beispiel}}}};
+%	\end{tikzpicture}%
+%}%
+%
+%\newcommand{\codebox}[1]{%
+%	\begin{tikzpicture}[decoration=penciline, decorate]
+%		\pgfmathsetseed{1236}
+%		\node (n1) [decorate,draw=strongyellow, fill=strongyellow!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#1};
+%	\end{tikzpicture}%
+%}%
+%
+%\newcommand{\defbox}[1]{%
+%	\begin{tikzpicture}[decoration=penciline, decorate]
+%		\pgfmathsetseed{1237}
+%		\node (n1) [decorate,draw=darkred, fill=darkred!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#1};
+%	\end{tikzpicture}%
+%}%
+%
+%\newcommand{\theobox}[1]{%
+%	\begin{tikzpicture}[decoration=penciline, decorate]
+%		\pgfmathsetseed{1240}
+%		\node (n1) [decorate,draw=darkblue, fill=darkblue!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#1};
+%	\end{tikzpicture}%
+%}%
+%
+%\newcommand{\anybox}[2]{%
+%	\begin{tikzpicture}[decoration=penciline, decorate]
+%		\pgfmathsetseed{1240}
+%		\node (n1) [decorate,draw=#1, fill=#1!10,thick,align=left,text width=\linewidth, inner ysep=2mm, inner xsep=2mm] at (0,0) {#2};
+%	\end{tikzpicture}%
+%}%
+%
+%
+%\newsavebox{\mybox}%
+%\newcommand{\doodlebox}[2]{%
+%\sbox{\mybox}{#2}%
+%	\begin{tikzpicture}[decoration=penciline, decorate]
+%		\pgfmathsetseed{1238}
+%		\node (n1) [decorate,draw=#1, fill=#1!10,thick,align=left,inner sep=1mm] at (0,0) {\usebox{\mybox}};
+%	\end{tikzpicture}%
+%}%
+%\newcommand{\widedoodlebox}[2]{%
+%\sbox{\mybox}{#2}%
+%	\begin{tikzpicture}[decoration=penciline, decorate]
+%		\pgfmathsetseed{1238}
+%		\node (n1) [decorate,draw=#1, fill=#1!10,thick,align=left,inner sep=1mm,text width=\linewidth] at (0,0) {\usebox{\mybox}};
+%	\end{tikzpicture}%
+%}%

@@ -21,15 +21,41 @@
 % (the latter is useful for reducing whitespaces that can occur in subscripts or exponents.)
 \usepackage{mathtools}
 
-% Provides a good default for the ‘\mathscr{…}’ font style.
-% TODO: Maybe customize with the ‘mathalpha’-package later.
-\usepackage{mathrsfs}
+% More symbols like \lighning, \bigsqcap and the \llbracket \rrbracket delimiter pair
+\usepackage{stmaryrd}
 
-% TODO: Add description about what this exactly does.
-% TODO: are there options to: 
-% 					- disable the warnings that this overwrites some ams-things
-% 					- make it overwrite all it can
-\usepackage{unicode-math}
+% For negating (strike-through) of own symbols.
+% \centernot works like \not, but a bit better for wider symbols.
+\usepackage{centernot}
+
+% For cancelling terms.
+% Defines \cancel{term}, \bcancel{term} (backwards, i.e. the other diagonal), \xcancel{term}
+% and \cancelto{value}{term} (cancel with an arrow to the value)
+\usepackage{cancel}
+
+% Customize the font styles.
+% ‘dsserif’ for \mathbb also supports digits, e.g. for a unit vector: \mathbb{1}.
+\usepackage[cal=cm,
+scr=rsfso,
+% lucida fraktur is under commercial license, unfortunately
+frak=euler,
+bb=dsserif]{mathalpha}
+
+% ~~~~ I tried using the ‘unicode-math’-package, but there were just too many problems, warnings and bugs (e.g. no \setminus in many fonts).
+% ~~~~ Maybe look into this again in a few years.
+% Redefines many math symbols to unicode.
+% Also allows \mathbb{1}
+% Should be ok to ignore these warnings, but have a closer look if there is a problem with ‘\…colon…’-commands, e.g. \coloneqq.
+%\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+%\setmathfont{Stix Two Math}
+%\setmathfont{ConcreteMath}[range={cal, bfcal}]
+%\setmathfont{Stix Two Math}[range={scr, bfscr}, StylisticSet=1]
+
+%% Symbol definitions
+\newcommand{\quantor}{\mathord{\reflectbox{\ensuremath{Q}}}}	% the generic quantor
+\NewDocumentCommand{\blank}{}{\ensuremath{\centernot b}}		% blank symbol of Turing machines
+\NewDocumentCommand{\questioneq}{}{\stackrel{\text{?}}{=}}		% = with a ‘?’ on top
+\NewDocumentCommand{\contra}{}{\scalebox{1.25}{\lightning}}		% lightning symbol for contradiction
 
 %% Numbers
 \NewDocumentCommand{\N}{}{\ensuremath{\mathbb{N}}\xspace}
@@ -38,20 +64,16 @@
 \NewDocumentCommand{\R}{}{\ensuremath{\mathbb{R}}\xspace}
 \NewDocumentCommand{\C}{}{\ensuremath{\mathbb{C}}\xspace}
 
-% Funktionen und variablen aus mehreren Buchstaben
 % use this for multi-letter variables/
 \newcommand{\var}[1]{\ensuremath{\mathrm{#1}}}
 \newcommand{\func}[1]{\operatorname{#1}}
 
-\newcommand\questioneq{\stackrel{\text{?}}{=}}
 
 % MathOperator with a ‘*’ allows for ‘lim’-like notation with limits below in display math mode.
 % \max, \min, \sup, \inf are already pre-defined by amsmath
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 
-\newcommand{\quantifier}{\style{display: inline-block; transform: scale(-1, 1)}{\mathsf{Q}}}
-\newcommand{\blank}{\not{b}}
 
 % File has been loaded.
 \toggletrue{80-math}

@@ -1,7 +1,7 @@
 % !TEX TS-program = lualatex
 % ^---- This should always be the first line of any lualatex project
 
-\documentclass{article}
+\documentclass{beamer}
 
 % This part of the preamble is indispensable for this template to work.
 \input{../preamble/01-mandatory.tex}
@@ -9,42 +9,21 @@
 % used for "latex-example"-example
 \usepackage{tikz}
 
-\input{../preamble/85-complexity-classes.tex}
+\usepackage{graphicx}
+
+%\input{../preamble/80-math.tex}
+%\input{../preamble/85-complexity-classes.tex}
 % required by the complexity-classes
 % TODO: where to actually put it
-\usepackage{xspace}
+ %\usepackage{xspace}
 
 \begin{document}
 
-\tableofcontents
-\newpage
-
-\section{Complexity Classes}
-\begin{latex-example}[lefthand width=5cm]{Complexity Classes}
-\PTime, \NP and \complclass{APX} are some complexity classes.
-Clever spacing (\NP-complete),
-inline math mode ($\PTime \subseteq \NP$)
-and display style
-\[
-	\PTime \neq \ExpTime
-\]
-are supported.
-
-There is also
-\begin{itemize}
-	\item \kExpTime
-	\item \NkExpTime 
-	\item \kExpTime[4]
-	\item \NkExpTime[4]
-	\item \kExpSpace
-	\item \kExpSpace[5]
-\end{itemize}
-\end{latex-example}
-
-\appendix
-
-\section{About this document}
+%\section{About this document}
 % the outer tcblisting is used to display once, how the “latex-example”-environment is used in this document.
+
+% For latex-example-code use the ‘fragile’ option.
+\begin{frame}[fragile]
 \begin{tcblisting}{title=Usage of \texttt{latex-example} (for this document only).}
 	\begin{latex-example}[lefthand width=3.5cm]{Test123}
 	\begin{tikzpicture}
@@ -55,5 +34,6 @@ There is also
 	\end{tikzpicture}
 	\end{latex-example}
 \end{tcblisting}
+\end{frame}
 
 \end{document}

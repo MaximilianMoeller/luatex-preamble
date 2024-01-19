@@ -4,6 +4,14 @@
 % Much more robust than the somewhat obsolete ‘ifthen’-package. You should not load it.
 \usepackage{etoolbox}
 
+% Some packages behave differently (or not at all) with the beamer document class.
+% The following toggle provides an easy and more explicit way for all subsequent headers to check
+% if they are loaded by a beamer document.
+\newtoggle{is-beamer}
+\makeatletter
+\@ifclassloaded{beamer}{\toggletrue{is-beamer}}{\togglefalse{is-beamer}}
+\makeatother
+
 % One toggle for every optional header file, the initial state of each toggle is false.
 \newtoggle{70-latex-examples}
 \newtoggle{80-math}

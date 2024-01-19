@@ -6,12 +6,13 @@
 %  │ Basics │
 %  └────────┘
 %
-\usepackage[TU]{fontenc} %to enable bold small-caps letters
+
+%\usepackage[TU]{fontenc} %to enable bold small-caps letters
 
 \usepackage{fontspec}
-\setsansfont{Latin Modern Roman}
+%\setsansfont{Latin Modern Roman}
 % spezielle Sonderzeichen
-\usepackage{textcomp}
+%\usepackage{textcomp}
 % deutsches Sprachpaket
 \usepackage[english]{babel}
 %\usepackage{url}
@@ -53,35 +54,37 @@
 % │ Mathematik │
 % └────────────┘
 % mathematische Pakete
-\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, mathrsfs}
+%\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, mathrsfs}
 % Terme streichen (optional mit Wert, z.B. Wert -> 0)
 \usepackage{cancel}
 % Bold math
-\usepackage{bm, bbm}
+% do not use bbm (see https://tex.stackexchange.com/a/583600)
+% and do not use bm (never used it, really)
+%\usepackage{bm, bbm}
 % Shortcuts für Zahlenbereiche
-\newcommand\N{\ensuremath{\mathbb{N}}}
-\newcommand\Z{\ensuremath{\mathbb{Z}}}
-\newcommand\Q{\ensuremath{\mathbb{Q}}}
-\newcommand\R{\ensuremath{\mathbb{R}}}
-\newcommand\C{\ensuremath{\mathbb{C}}}
+%\newcommand\N{\ensuremath{\mathbb{N}}}
+%\newcommand\Z{\ensuremath{\mathbb{Z}}}
+%\newcommand\Q{\ensuremath{\mathbb{Q}}}
+%\newcommand\R{\ensuremath{\mathbb{R}}}
+%\newcommand\C{\ensuremath{\mathbb{C}}}
 % Funktionen und variablen aus mehreren Buchstaben
-\newcommand{\var}[1]{\mathit{\text{#1}}}
-\newcommand{\func}[1]{\operatorname{\text{#1}}}
+%\newcommand{\var}[1]{\mathit{\text{#1}}}
+%\newcommand{\func}[1]{\operatorname{\text{#1}}}
 
 % Mehr Sonderzeichen (z.B. Blitz oder eckige Doppelklammern)
-\usepackage{stmaryrd}
+%\usepackage{stmaryrd}
 % Fixt komische Schriftartfehler für stmaryrd
-\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
+%\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
 
-% Widerspruch als Blitz
-\newcommand\contra{\scalebox{1.5}{$\lightning$}}
-% = mit "def" darüber
-\newcommand\defeq{\stackrel{\text{def}}{=}}
-% :<=>
-\usepackage{colonequals}
-\newcommand\logeq{\ratio\Longleftrightarrow}
-% logical proof (inference rules)
-\usepackage[]{proof}
+%% Widerspruch als Blitz
+%\newcommand\contra{\scalebox{1.5}{$\lightning$}}
+%% = mit "def" darüber
+%\newcommand\defeq{\stackrel{\text{def}}{=}}
+%% :<=>
+%\usepackage{colonequals}
+%\newcommand\logeq{\ratio\Longleftrightarrow}
+%% logical proof (inference rules)
+%\usepackage[]{proof}
 
 % SI-Einheiten
 \usepackage{siunitx}  
