@@ -1,7 +1,8 @@
 % !TEX TS-program = lualatex
 % ^---- This should always be the first line of any lualatex project
 
-\documentclass{beamer}
+\documentclass[aspectratio=1610]{beamer}
+
 
 % This part of the preamble is indispensable for this template to work.
 \input{../preamble/01-mandatory.tex}
@@ -9,18 +10,54 @@
 % used for "latex-example"-example
 \usepackage{tikz}
 
-\usepackage{graphicx}
-
-%\input{../preamble/80-math.tex}
-%\input{../preamble/85-complexity-classes.tex}
+\input{../preamble/80-math.tex}
+\input{../preamble/85-complexity-classes.tex}
 % required by the complexity-classes
 % TODO: where to actually put it
- %\usepackage{xspace}
+\usepackage{xspace}
+
+\usepackage{fontspec}
+\usetheme[noddc, beamerfont]{tud}
+
+\author{Maximilian Moeller}
+\title{Title}
+\date{\today}
+
+% Use ‘fachrichtung’ instead, because ‘einrichtung’ makes a weird whitespace
+%\einrichtung{uditaren}
+\fachrichtung{Fakultät Informatik}
+%\institut{Institute}
+%\professur{Chair}
+\datecity{Dresden}
+
 
 \begin{document}
 
+% ‘\darktitlepage’ somehow does nothing! :))))))))))))))) (The corporate design just broke me…)
+\maketitle
+
 %\section{About this document}
 % the outer tcblisting is used to display once, how the “latex-example”-environment is used in this document.
+
+\section{Complexity Classes}
+
+\begin{frame}{Complexity Classes}
+\PTime, \NP and \complclass{APX} are some complexity classes.
+Clever spacing (\NP-complete),
+inline math mode ($\PTime \subseteq \NP$)
+and display style
+\[
+	\PTime \neq \ExpTime \setminus \NP
+\]
+are supported.
+
+There is also
+\begin{itemize}
+	\item \kExpTime
+	\item \NkExpTime 
+	\item \kExpTime[4]
+\end{itemize}
+\end{frame}
 
 % For latex-example-code use the ‘fragile’ option.
 \begin{frame}[fragile]
