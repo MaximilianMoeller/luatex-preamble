@@ -4,6 +4,9 @@
 % Much more robust than the somewhat obsolete ‘ifthen’-package. You should not load it.
 \usepackage{etoolbox}
 
+% NewDocumentCommand and NewDocumentEnvironment
+\usepackage{xparse}
+
 % Some packages behave differently (or not at all) with the beamer document class.
 % The following toggle provides an easy and more explicit way for all subsequent headers to check
 % if they are loaded by a beamer document.
@@ -16,3 +19,4 @@
 \newtoggle{70-latex-examples}
 \newtoggle{80-math}
 \newtoggle{85-complexity-classes}
+\newtoggle{90-algorithms}

@@ -4,13 +4,13 @@
 \documentclass{article}
 
 % This part of the preamble is indispensable for this template to work.
-\input{../preamble/01-mandatory.tex}
-\input{../preamble/70-latex-examples.tex}
+\input{preamble/01-mandatory.tex}
+\input{preamble/70-latex-examples.tex}
 % used for "latex-example"-example
 \usepackage{tikz}
 
-\input{../preamble/80-math.tex}
-\input{../preamble/85-complexity-classes.tex}
+\input{preamble/80-math.tex}
+\input{preamble/85-complexity-classes.tex}
 % required by the complexity-classes
 % TODO: where to actually put it
  \usepackage{xspace}
@@ -34,12 +34,12 @@
 \end{align*}
 \end{latex-example}
 
-\begin{latex-example}[lefthand width=3.5cm]{Numbers}
-\[
-	\N \subseteq \Z \coloneqq \R \setminus \Q \contra
-\]
-But also works in text like \Q, \R and \C.
+\begin{latex-example}[lefthand width=3.5cm]{Symbols}
+$\N \subseteq \Z \questioneq \R$\\
 $\quantor x \forall y. x + \mathbb{1} * y^{-1} \neq \blank$
+\[
+	\func{fun}_{\var{abc}}^{1} (x) = \func*{fun}_{\var{abc}}^{k+1} (x)
+\]
 \end{latex-example}
 
 

@@ -1,0 +1,14 @@
+% For captioning and labeling algorithms.
+\usepackage{algorithm}
+
+% Predefined layout for the ‘algorithmicx’-package, which it loads internally
+% The ‘noend’-option prevents stuff like ‘end if’ or ‘end loop’
+\usepackage[noend]{algpseudocode}
+
+% Don't increase algorithm number between ovelay slides
+\iftoggle{is-beamer}{
+	\resetcounteronoverlays{algorithm}
+}
+{}
+
+\toggletrue{90-algorithms}
