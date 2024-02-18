@@ -1,0 +1,27 @@
+% Provides: Improvements for LaTeX default environments or options
+% Requires: /
+
+% Prevents page numbers and headings from appearing on empty pages.
+\usepackage{emptypage}
+
+% Allows the [H]-option for figures and tables, placing it exactly HERE.
+\usepackage{float}
+
+% Visually pleasing captions and subcaptions.
+% Internally loads the ‘subcaption’-package.
+\usepackage{caption}
+% Seems like a good default, but might need to be adjusted in two-column documents.
+\captionsetup{margin=10pt,font=small,labelfont=bf}
+
+% Provides quotation-commands and styling options.
+% The ‘autostyle’ makes csquotes use the default quotation style of the doucment‘s language. (Requires a language to be set via babel.)
+\usepackage[autostyle]{csquotes}
+
+% Some packages misbehave with beamer.
+\iftoggle{is-beamer}{}{
+	% Fine-grained control over ‘enumerate’ and ‘itemize’ environments.
+	% Either set options per environment or globally via ‘\setlist[…]{…}’
+	\usepackage{enumitem}
+}
+
+\toggletrue{04-improvements}

@@ -5,9 +5,14 @@
 
 % This part of the preamble is indispensable for this template to work.
 \input{preamble/01-mandatory.tex}
+\input{preamble/02-language-english.tex}
+%\input{preamble/02-language-german.tex}
+\input{preamble/03-typography.tex}
+\input{preamble/04-improvements.tex}
 \input{preamble/70-latex-examples.tex}
 % used for "latex-example"-example
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta, automata, graphs, positioning, backgrounds, calc, quotes, shapes.geometric}
 
 \input{preamble/80-math.tex}
 \input{preamble/85-complexity-classes.tex}
@@ -64,6 +69,54 @@ There is also
 	\item \kExpSpace[5]
 \end{itemize}
 \end{latex-example}
+
+\newpage
+\section{Dummy text}
+This is some dummy text containing, \eg some use of abbreviations, \ie, these two.
+
+\lipsum
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[every edge/.style={draw, ->, shorten >=0.5pt, >={Stealth[round]}, semithick}]
+	\node  (0) at (0, 0) {$v_{0}$};
+	\node (1) at (2, 0) {$v_{1}$};
+	\node  (2) at (4, 0) {$v_{2}$};
+
+	\node (3) at (0, -2) {$v_{3}$};
+	\node (4) at (2, -2) {$v_{4}$};
+	\node  (5) at (4, -2) {$v_{5}$};
+
+	\node (6) at (0, -4) {$v_{6}$};
+	\node  (7) at (2, -4) {$v_{7}$};
+	\node  (8) at (4, -4) {$v_{8}$};
+
+	\draw (0) edge (1);
+	\draw (0) edge [bend left=20] (4);
+
+	\draw (1) edge (2);
+	\draw (1) edge (4);
+
+	\draw (2) edge [bend left=20] (5);
+
+	\draw (3) edge (0);
+	\draw (3) edge (7);
+
+	\draw (4) edge [bend left=20] (0);
+	\draw (4) edge (7);
+
+	\draw (5) edge [bend left=20] (2);
+	\draw (5) edge (4);
+	\draw (5) edge (8);
+
+	\draw (6) edge (3);
+
+	\draw (7) edge (6);
+	\draw (7) edge [out=-30, in=30, loop] ();
+
+\end{tikzpicture}
+\caption{An example graph}
+\end{figure}
 
 \appendix
 

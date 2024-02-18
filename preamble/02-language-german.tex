@@ -1,0 +1,16 @@
+% Provides: the ‘babel’ package, setting the language to german
+% Requires: /
+
+% Mutually exclusive with the ‘02-language-english’ template
+% Will throw an error if both are loaded.
+
+\iftoggle{02-language-english}{
+	\PackageError{preamble/language}{%
+		Only one language-header should be loaded! Previously loaded: english.
+	}{
+		Make sure to only load one language-header in the preamble of your document.
+	}
+}{
+	\usepackage[ngerman]{babel}
+	\toggletrue{02-language-german}
+}

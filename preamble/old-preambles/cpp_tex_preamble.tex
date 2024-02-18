@@ -6,46 +6,46 @@
 %  │ Basics │
 %  └────────┘
 %
-\usepackage[TU]{fontenc} %to enable bold small-caps letters
+%\usepackage[TU]{fontenc} %to enable bold small-caps letters
 
-\usepackage{fontspec}
+%\usepackage{fontspec}
 \setsansfont{Latin Modern Roman}
 % spezielle Sonderzeichen
-\usepackage{textcomp}
+%\usepackage{textcomp}
 % deutsches Sprachpaket
-\usepackage[english]{babel}
+%\usepackage[english]{babel}
 %\usepackage{url}
 % Einbindung von Bildern
 \usepackage{graphicx}
 % Bilder auf der Titelseite
 \usepackage{titlepic}
 % verbesserte floating-Objekte (z.B. figures/tables)
-\usepackage{float}
+%\usepackage{float}
 % verbesserter Schriftsatz (nicht sichtbare Abweichungen)
-\usepackage[]{microtype}
+%\usepackage[]{microtype}
 % kann erkennen, ob ein space gebraucht wird oder nicht (praktisch für newcommands)
-\usepackage{xspace}
+%\usepackage{xspace}
 % verbesserte Tabellen
 \usepackage{booktabs}
 % Kontrolle über enumerate, itemize und description
-\usepackage{enumitem}
+%\usepackage{enumitem}
 % Platz zwischen Paragraphen
-\usepackage{parskip}
+%\usepackage{parskip}
 % Keine Zeilennummern auf leeren Seiten
-\usepackage{emptypage}
-\usepackage{subcaption}
+%\usepackage{emptypage}
+%\usepackage{subcaption}
 % Text in mehreren Spalten
 \usepackage{multicol}
 % Mehr Farben
 \usepackage[dvipsnames]{xcolor}
 % Lorem ipsum mit \blindtext
-\usepackage[]{blindtext}
+%\usepackage[]{blindtext}
 % Todos
 \usepackage[colorinlistoftodos]{todonotes}
 % Ersetzt etwas durch nichts (debugging)
-\newcommand\hide[1]{}
+%\newcommand\hide[1]{}
 % Zitate
-\usepackage{csquotes}
+%\usepackage{csquotes}
 % Bibliography
 \usepackage[backend=biber, style=alphabetic]{biblatex}
 \addbibresource{references.bib}
@@ -53,41 +53,41 @@
 %\usepackage{ifthen}
 
 % e.g. and i.e.
-\usepackage{xpunctuate}
-\newcommand\eg{\textit{e}.\textit{g}.\xcomma}
-\newcommand\ie{\textit{i}.\textit{e}.\xcomma}
+%\usepackage{xpunctuate}
+%\newcommand\eg{\textit{e}.\textit{g}.\xcomma}
+%\newcommand\ie{\textit{i}.\textit{e}.\xcomma}
 
 % ┌────────────┐
 % │ Mathematik │
 % └────────────┘
 % mathematische Pakete
-\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, mathrsfs}
-% Terme streichen (optional mit Wert, z.B. Wert -> 0)
-\usepackage{cancel}
-% Bold math
-\usepackage{bm, bbm}
+%\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, mathrsfs}
+%% Terme streichen (optional mit Wert, z.B. Wert -> 0)
+%\usepackage{cancel}
+%% Bold math
+%\usepackage{bm, bbm}
 % Shortcuts für Zahlenbereiche
-\newcommand\N{\ensuremath{\mathbb{N}}}
-\newcommand\Z{\ensuremath{\mathbb{Z}}}
-\newcommand\Q{\ensuremath{\mathbb{Q}}}
-\newcommand\R{\ensuremath{\mathbb{R}}}
-\newcommand\C{\ensuremath{\mathbb{C}}}
-% Funktionen und variablen aus mehreren Buchstaben
-\newcommand{\var}[1]{\mathit{\text{#1}}}
-\newcommand{\func}[1]{\operatorname{\text{#1}}}
+%\newcommand\N{\ensuremath{\mathbb{N}}}
+%\newcommand\Z{\ensuremath{\mathbb{Z}}}
+%\newcommand\Q{\ensuremath{\mathbb{Q}}}
+%\newcommand\R{\ensuremath{\mathbb{R}}}
+%\newcommand\C{\ensuremath{\mathbb{C}}}
+%% Funktionen und variablen aus mehreren Buchstaben
+%\newcommand{\var}[1]{\mathit{\text{#1}}}
+%\newcommand{\func}[1]{\operatorname{\text{#1}}}
 
 % Mehr Sonderzeichen (z.B. Blitz oder eckige Doppelklammern)
-\usepackage{stmaryrd}
+%\usepackage{stmaryrd}
 % Fixt komische Schriftartfehler für stmaryrd
-\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
+%\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
 
 % Widerspruch als Blitz
-\newcommand\contra{\scalebox{1.5}{$\lightning$}}
+%\newcommand\contra{\scalebox{1.5}{$\lightning$}}
 % = mit "def" darüber
-\newcommand\defeq{\stackrel{\text{def}}{=}}
+%\newcommand\defeq{\stackrel{\text{def}}{=}}
 % :<=>
-\usepackage{colonequals}
-\newcommand\logeq{\ratio\Longleftrightarrow}
+%\usepackage{colonequals}
+%\newcommand\logeq{\ratio\Longleftrightarrow}
 % logical proof (inference rules)
 \usepackage[]{proof}
 
@@ -109,21 +109,21 @@
 % ┌──────┐
 % │ tikz │
 % └──────┘
-\usepackage{tikz}
-\usetikzlibrary{arrows, automata, graphs, positioning}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows, automata, graphs, positioning}
 %\tikzset{
 %	->, % directed edges
 %	>=stealth, % bold arrow heads
 %	node distance = 2cm,
 %	default/.style={circle, thin, draw=black, fill=gray!25}
 %}
-\tikzstyle{vertex}=[circle, draw, fill=white, inner sep=0pt, minimum width=1ex]
+%\tikzstyle{vertex}=[circle, draw, fill=white, inner sep=0pt, minimum width=1ex]
 
 % ┌────────────┐
 % │ algorithms │
 % └────────────┘
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
+%\usepackage{algorithm}
+%\usepackage[noend]{algpseudocode}
 
 %  ┌───────────┐
 %  │ sonstiges │

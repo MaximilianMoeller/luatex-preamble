@@ -1,0 +1,30 @@
+% Provides: Font styling and spacing
+% Requires: /
+
+% Font selection and acces to system fonts
+\usepackage[no-math]{fontspec}
+
+% Provides the ‘\xspace’ command, which conditionally inserts a space, depending on the following symbol.
+% Needed by some other headers.
+\usepackage{xspace}
+
+% Similar to ‘xspace’, provides ‘\xcomma’, ‘\xperiod’ and ‘\xperiodcomma’.
+\usepackage{xpunctuate}
+% Always follow i.e. and e.g. by a comma (Chicago Manual of Style says so)
+\newcommand\eg{e.g.\xcomma}
+\newcommand\ie{i.e.\xcomma}
+
+% Separates paragraphs by a vertical space instead of (or in addition to) indenting them.
+% To keep the indentation of new paragraphs, supply the ‘indent’ option.
+\usepackage{parskip}
+
+% Dummy text (lorem ipsum …)
+\usepackage{lipsum}
+
+% Some packages misbehave with beamer.
+\iftoggle{is-beamer}{}{
+	% Very slightly adjusts spacing
+	\usepackage{microtype}
+}
+
+\toggletrue{03-typography}
