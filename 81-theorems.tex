@@ -1,0 +1,94 @@
+% Provides: Definitions and styling for theorem-like environments
+% Requires: the math-header for \newtheorem, one of the language-headers
+
+\iftoggle{80-math}{
+
+	% For frames around theorems
+	% Loads xcolor if it has not previously been loaded
+	\usepackage{mdframed}
+
+	% Default values for all frames
+	\mdfsetup{
+		skipabove=\baselineskip,
+		skipbelow=\baselineskip,
+		innertopmargin=\topskip,
+		innerbottommargin=\topskip,
+	}
+
+	% styling for almost all frames
+	\mdfdefinestyle{theoremstyle}{
+		roundcorner=2pt,
+		linewidth=0.6pt,
+		frametitlerule=true,%
+		frametitleaboveskip=7pt,
+		frametitlebelowskip=7pt,
+		frametitlerulewidth=0.4pt,%
+		nobreak=true,
+		%	frametitlebackgroundcolor=gray!30,
+	}
+
+	% Same for both languages
+	% Definitions define the numbering	name of nev		printed name	numbering resets with
+	\mdtheorem[style=theoremstyle]		{definition}	{Definition}	[section]
+	% Everything else follows it		name of env		numbered like	printed name
+	\mdtheorem[style=theoremstyle]		{proposition}	[definition]	{Proposition}
+	\mdtheorem[style=theoremstyle]		{lemma}			[definition]	{Lemma}
+	\mdtheorem[style=theoremstyle]		{axiom}			[definition]	{Axiom}
+
+	\iftoggle{02-language-english}{
+		\mdtheorem[style=theoremstyle]	{theorem}		[definition]	{Theorem}
+		\mdtheorem[style=theoremstyle]	{corollary}		[definition]	{Corollary}
+	}{}
+	\iftoggle{02-language-german}{
+		\mdtheorem[style=theoremstyle]	{theorem}		[definition]	{Satz}
+		\mdtheorem[style=theoremstyle]	{corollary}		[definition]	{Korollar}
+	}{}
+
+	% \proofname is language-aware (but I don't know whether babel or some ams-package sets it)
+	\NewDocumentEnvironment {subproof} { O{\proofname} +b}{%
+		\renewcommand{\qedsymbol}{$\blacksquare$}%
+		\begin{proof}[#1]%
+			#2
+		\end{proof}%
+	}{}
+
+	% some in-text environments, that all use the ‘remark’-theorem-style, i.e. italic theorem name.
+	% unfortunately, they have to be defined separately for both numbered and unnumbered use
+	\theoremstyle{remark}
+	\newtheorem{problem}			[definition]{Problem}
+	\newtheorem*{problem*}						{Problem}
+	\newtheorem{notation}			[definition]{Notation}
+	\newtheorem*{notation*}						{Notation}
+
+	\iftoggle{02-language-english}{
+		\newtheorem{terminology}	[definition]{Terminology}
+		\newtheorem*{terminology*}				{Terminology}
+		\newtheorem{remark}			[definition]{Remark}
+		\newtheorem*{remark*}					{Remark}
+		\newtheorem{example}		[definition]{Example}
+		\newtheorem*{example*}					{Example}
+	}{}
+	\iftoggle{02-language-german}{
+		\newtheorem{terminology}	[definition]{Terminologie}
+		\newtheorem*{terminology*}				{Terminologie}
+		\newtheorem{remark}			[definition]{Anmerkung}
+		\newtheorem*{remark*}					{Anmerkung}
+		\newtheorem{example}		[definition]{Beispiel}
+		\newtheorem*{example*}					{Beispiel}
+	}{}
+
+	% examples have a lightgrey background and a darkgray left-line
+	\mdfdefinestyle{examplestyle}{%
+		topline=false,
+		bottomline=false,
+		rightline=false,
+		linewidth=4pt,
+		linecolor=lightgray!70,
+		backgroundcolor=lightgray!40,
+	}
+	\surroundwithmdframed[style=examplestyle]{example}
+	\surroundwithmdframed[style=examplestyle]{example*}
+
+
+	\toggletrue{81-theorems}
+}{}
