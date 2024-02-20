@@ -28,6 +28,11 @@
 \iftoggle{is-beamer}{}{
 	% Very slightly adjusts spacing
 	\usepackage{microtype}
+
+	% Prevents widows and orphans.
+	% At least three lines before a page break and at least 3 after it sound fine.
+	% The ‘all’-option applies it to the whole document.
+	\usepackage[defaultlines=3, all]{nowidow}
 }
 
 \toggletrue{03-typography}
