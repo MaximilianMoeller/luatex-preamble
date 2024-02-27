@@ -6,7 +6,100 @@
     colorlinks=true,
 }
 
-% Automatically add the type of whatever is being referenced by ‘\cref{…}’, e.g., ‘Figure 1’
-\usepackage[capitalize]{cleveref}
+% Automatically add the type of whatever is being referenced by ‘\cref{…}’ or ‘\Cref{…}’, e.g., ‘Figure 1’
+\usepackage{cleveref}
+
+\iftoggle{81-theorems}{
+	% teaches cleverref how to name links to objects of a certain type
+	\iftoggle{02-language-english}{
+		% Define everything lowercase. \Cref can still be used to achieve upper case.
+		\crefname{definition}{definition}{definitions}
+		\crefname{proposition}{proposition}{propositions}
+		\crefname{lemma}{lemma}{lemmas}
+		\crefname{axiom}{axiom}{axioms}
+
+		\crefname{theorem}{theorem}{theorems}
+		\crefname{corollary}{corollary}{corollaries}
+
+		\crefname{problem}{problem}{problems}
+		\crefname{notation}{notation}{notations}
+		\crefname{terminology}{terminology}{terminologies}
+		\crefname{remark}{remark}{remarks}
+		\crefname{example}{example}{examples}
+
+		\crefname{proof}{proof}{proofs}
+	}{}
+
+	\iftoggle{02-language-german}{
+		\crefname{definition}{Definition}{Definitionen}
+		\crefname{proposition}{Proposition}{Propositionen}
+		\crefname{lemma}{Lemma}{Lemmata}
+		\crefname{axiom}{Axiom}{Axiome}
+
+		\crefname{theorem}{Satz}{Sätze}
+		\crefname{corollary}{Korollar}{Korollare}
+
+		\crefname{problem}{Problem}{Probleme}
+		\crefname{notation}{Notation}{Notationen}
+		\crefname{terminology}{Terminologie}{Terminologien}
+		\crefname{remark}{Anmerkung}{Anmerkungen}
+		\crefname{example}{Beispiel}{Beispiele}
+
+		\crefname{proof}{Beweis}{Beweise}
+	}{}
+
+	% By default cleveref determines a links type by looking at the counter.
+	% However, all my mdframed and newtheorem environments use the same counter ‘definition’.
+	% The following introduces a new type for each environment (how they are spelled out is handled above).
+	\let\oldproposition\proposition
+	\renewcommand{\proposition}{%
+		\crefalias{definition}{proposition}%
+	\oldproposition}
+
+	\let\oldlemma\lemma
+	\renewcommand{\lemma}{%
+		\crefalias{definition}{lemma}
+	\oldlemma}
+
+	\let\oldaxiom\axiom
+	\renewcommand{\axiom}{%
+		\crefalias{definition}{axiom}
+	\oldaxiom}
+
+	\let\oldtheorem\theorem
+	\renewcommand{\theorem}{%
+		\crefalias{definition}{theorem}
+	\oldtheorem}
+
+	\let\oldcorollary\corollary
+	\renewcommand{\corollary}{%
+		\crefalias{definition}{corollary}
+	\aoldcorollary}
+
+	\let\oldproblem\problem
+	\renewcommand{\problem}{%
+		\crefalias{definition}{problem}
+	\oldproblem}
+
+	\let\oldnotation\notation
+	\renewcommand{\notation}{%
+		\crefalias{definition}{notation}
+	\oldnotation}
+
+	\let\oldterminology\terminology
+	\renewcommand{\terminology}{%
+		\crefalias{definition}{terminology}
+	\oldterminology}
+
+	\let\oldremark\remark
+	\renewcommand{\remark}{%
+		\crefalias{definition}{remark}
+	\oldremark}
+
+	\let\oldexample\example
+	\renewcommand{\example}{%
+		\crefalias{definition}{example}
+	\oldexample}
+}{}
 
 \toggletrue{99-references}
