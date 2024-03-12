@@ -6,24 +6,26 @@
 \IfPackageAtLeastTF{tcolorbox}{2024/01/01}
 {%
 	\NewTCBListing{latex-example}{ O{lefthand width=3.5cm} m}{%
-		colframe=red!50!yellow!50!black,
+		coltitle=white,
+		colframe=red!75!black,
+		bicolor,
 		colback=white,
-		coltitle=red!50!yellow!3!white,
-		bicolor,colbacklower=red!50!yellow!5!white,
+		colbacklower=red!5!white,
 		fonttitle=\sffamily\bfseries,
 		sidebyside,text and listing,
-	title=#2,#1}
+		title=#2,#1}
 }
 {%
-
 	\newtcblisting{latex-example}[2][]{%
-		colframe=red!50!yellow!50!black,
+		coltitle=white,
+		colframe=red!75!black,
+		bicolor,
 		colback=white,
-		coltitle=red!50!yellow!3!white,
-		bicolor,colbacklower=red!50!yellow!5!white,
+		colbacklower=red!5!white,
 		fonttitle=\sffamily\bfseries,
 		sidebyside,text and listing,
-	title=#2,#1}
+		title=#2,#1
+	}
 }%
 
 % File has been loaded.
