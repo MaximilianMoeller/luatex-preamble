@@ -1,7 +1,7 @@
 % Provides: Definitions and styling for theorem-like environments
 % Requires: the math-header for \newtheorem, one of the language-headers
 
-\iftoggle{80-math}{
+\iftoggle{20-math}{
 
 	% For frames around theorems
 	% Loads xcolor if it has not previously been loaded
@@ -92,5 +92,5 @@
 	\surroundwithmdframed[style=examplestyle]{example*}
 
 
-	\toggletrue{81-theorems}
+	\toggletrue{21-theorems}
 }{}
