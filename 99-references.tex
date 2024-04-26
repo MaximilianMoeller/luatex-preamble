@@ -6,8 +6,11 @@
     colorlinks=true,
 }
 
-% Automatically add the type of whatever is being referenced by ‘\cref{…}’ or ‘\Cref{…}’, e.g., ‘Figure 1’
-\usepackage{cleveref}
+\iftoggle{is-beamer}{}{
+	% Automatically add the type of whatever is being referenced by ‘\cref{…}’ or ‘\Cref{…}’, e.g., ‘Figure 1’
+	% Not available in beamer class
+	\usepackage{cleveref}
+}
 
 \iftoggle{21-theorems}{
 	% teaches cleverref how to name links to objects of a certain type
