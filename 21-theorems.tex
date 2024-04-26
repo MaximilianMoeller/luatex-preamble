@@ -3,15 +3,16 @@
 
 \iftoggle{20-math}{
 
+	\newtoggle{framedTheorems}
+		% Change this to ‘true’ if you want the theorem environments to be beautifully framed
+	\settoggle{framedTheorems}{false}
+
 	% shortcut for defining both numbered and unnumbered versions of an environment in a signle command
 	% Usage: \newoptionalnumberedtheroem{envName}{counterLike}{Display Name}
 	\NewDocumentCommand{\newoptionalnumberedtheorem}{ m m m }{
 		\newtheorem{#1}		[#2]{#3}
 		\newtheorem*{#1*}		{#3}
 	}
-
-	\newtoggle{framedTheorems}
-	\settoggle{framedTheorems}{false}
 
 	% theorems need to be defined even when they are not visually surrounded
 	\nottoggle{framedTheorems}{
