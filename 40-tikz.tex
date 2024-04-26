@@ -1,0 +1,48 @@
+% Provides: Access to the TikZ drawing library and commonly used styles
+% Requires: /
+
+% The library, the myth, the legend: TikZ
+\usepackage{tikz}
+
+% more convenient placement options
+\usetikzlibrary{positioning}
+
+% Customize arrows
+\usetikzlibrary{arrows.meta}
+\tikzset{my arrows/.style={draw, ->, shorten >=0.5pt, >={Stealth[round]}, semithick}}
+\tikzset{every picture/every edge/.style={my arrows}}
+
+% Advanced graph drawing path commands
+\usetikzlibrary{graphs}
+
+% Finite Automata
+\usetikzlibrary{automata}
+
+\usetikzlibrary{matrix}
+\tikzset{ 
+	table/.style={
+		matrix of nodes,
+		row sep=-\pgflinewidth,
+		column sep=-\pgflinewidth,
+		nodes={rectangle,
+			draw=black,
+			text width=10em,
+			align=flush center,
+			inner sep=1pt,
+		},
+		text depth=0.25ex,
+		text height=1ex,
+		nodes in empty cells,
+		%minimum width=4.5cm,
+		minimum height=2.5cm,
+		%row 1/.style={minimum height=1cm},
+		%column 1/.style={minimum width=2cm}
+	}
+}
+\iftoggle{is-beamer}{
+	% beamer messes with catcodes
+	%\pgfkeys{every matrix/.append code={ampersand replacement=\&}}
+}{}
+
+
+\toggletrue{40-tikz}
