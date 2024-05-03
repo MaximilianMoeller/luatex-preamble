@@ -1,0 +1,15 @@
+% Provides: Typesetting for Gentzen sequent-style proofs, custom logic symbols
+% Requires: /
+
+% provides customization for different turnstile symbols
+\usepackage{turnstile}
+
+% make logical inference symbols consistently spaced
+\RenewDocumentCommand{\vdash}{}{\sststile{}{}}
+\RenewDocumentCommand{\vDash}{}{\sdtstile{}{}}
+\RenewDocumentCommand{\Vdash}{}{\dststile{}{}}
+
+% sequent-style proofs
+\usepackage{ebproof}
+
+\toggletrue{22-logic}
