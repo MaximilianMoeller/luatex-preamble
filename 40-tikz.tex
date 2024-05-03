@@ -1,0 +1,66 @@
+% Provides: Access to the TikZ drawing library and commonly used styles
+% Requires: /
+
+% The library, the myth, the legend: TikZ
+\usepackage{tikz}
+
+% more convenient placement options
+\usetikzlibrary{positioning}
+
+% Customize arrows
+\usetikzlibrary{arrows.meta}
+\tikzset{my arrows/.style={draw, ->, shorten >=0.5pt, >={Stealth[round]}, semithick}}
+
+% Advanced graph drawing path commands
+\usetikzlibrary{graphs}
+
+% Finite Automata
+\usetikzlibrary{automata}
+
+\usetikzlibrary{matrix}
+
+% enables \begin{pgfonlayer}{background}
+\usetikzlibrary{backgrounds}
+
+
+\iftoggle{is-beamer}{
+	\tikzset{onslide/.code args={<#1>#2}{%
+			\only<#1>{\pgfkeysalso{#2}}
+	}}
+	% beamer messes with catcodes
+	%\pgfkeys{every matrix/.append code={ampersand replacement=\&}}
+}{}
+
+\usetikzlibrary{calc}
+\newcommand{\convexpath}[2]{
+  [
+  create hullcoords/.code={
+    \global\edef\namelist{#1}
+    \foreach [count=\counter] \nodename in \namelist {
+      \global\edef\numberofnodes{\counter}
+      \coordinate (hullcoord\counter) at (\nodename);
+    }
+    \coordinate (hullcoord0) at (hullcoord\numberofnodes);
+    \pgfmathtruncatemacro\lastnumber{\numberofnodes+1}
+    \coordinate (hullcoord\lastnumber) at (hullcoord1);
+  },
+  create hullcoords
+  ]
+  ($(hullcoord1)!#2!-90:(hullcoord0)$)
+  \foreach [
+  evaluate=\currentnode as \previousnode using \currentnode-1,
+  evaluate=\currentnode as \nextnode using \currentnode+1
+  ] \currentnode in {1,...,\numberofnodes} {
+    let \p1 = ($(hullcoord\currentnode) - (hullcoord\previousnode)$),
+    \n1 = {atan2(\y1,\x1) + 90},
+    \p2 = ($(hullcoord\nextnode) - (hullcoord\currentnode)$),
+    \n2 = {atan2(\y2,\x2) + 90},
+    \n{delta} = {Mod(\n2-\n1,360) - 360}
+    in
+    {arc [start angle=\n1, delta angle=\n{delta}, radius=#2]}
+    -- ($(hullcoord\nextnode)!#2!-90:(hullcoord\currentnode)$)
+  }
+}
+
+
+\toggletrue{40-tikz}
