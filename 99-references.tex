@@ -1,10 +1,13 @@
-% Links and references.
+% Provides: Styling and names for in-document references such as theorems.
+% Requires: /
+
 \usepackage{hyperref}
 \hypersetup{
-    pdfauthor={Maximilian Moeller},
-    unicode=true,
-    colorlinks=true,
+	unicode=true,
+	colorlinks=true, % style links by coloring them (instead of boxes)
+	pdfstartview=FitV,
 }
+\urlstyle{same}
 
 \iftoggle{is-beamer}{}{
 	% Automatically add the type of whatever is being referenced by ‘\cref{…}’ or ‘\Cref{…}’, e.g., ‘Figure 1’
@@ -56,52 +59,52 @@
 		\let\oldproposition\proposition
 		\renewcommand{\proposition}{%
 			\crefalias{definition}{proposition}%
-		\oldproposition}
+			\oldproposition}
 
 		\let\oldlemma\lemma
 		\renewcommand{\lemma}{%
 			\crefalias{definition}{lemma}
-		\oldlemma}
+			\oldlemma}
 
 		\let\oldaxiom\axiom
 		\renewcommand{\axiom}{%
 			\crefalias{definition}{axiom}
-		\oldaxiom}
+			\oldaxiom}
 
 		\let\oldtheorem\theorem
 		\renewcommand{\theorem}{%
 			\crefalias{definition}{theorem}
-		\oldtheorem}
+			\oldtheorem}
 
 		\let\oldcorollary\corollary
 		\renewcommand{\corollary}{%
 			\crefalias{definition}{corollary}
-		\aoldcorollary}
+			\aoldcorollary}
 
 		\let\oldproblem\problem
 		\renewcommand{\problem}{%
 			\crefalias{definition}{problem}
-		\oldproblem}
+			\oldproblem}
 
 		\let\oldnotation\notation
 		\renewcommand{\notation}{%
 			\crefalias{definition}{notation}
-		\oldnotation}
+			\oldnotation}
 
 		\let\oldterminology\terminology
 		\renewcommand{\terminology}{%
 			\crefalias{definition}{terminology}
-		\oldterminology}
+			\oldterminology}
 
 		\let\oldremark\remark
 		\renewcommand{\remark}{%
 			\crefalias{definition}{remark}
-		\oldremark}
+			\oldremark}
 
 		\let\oldexample\example
 		\renewcommand{\example}{%
 			\crefalias{definition}{example}
-		\oldexample}
+			\oldexample}
 	}{}
 }
 

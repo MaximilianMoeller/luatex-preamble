@@ -1,0 +1,16 @@
+% Provides: Formatting of dates and times
+% Requires: one of the language-headers
+
+% Print dates via the \printdate{} command
+% The argument may be a date in German, British English, or ISO format, e.g.,
+% \printdate{24.12.2000}
+% \printdate{24/12/2000}
+% \printdate{2000-12-24}
+\iftoggle{02-language-english}{
+	\usepackage[british]{isodate}
+}{}
+\iftoggle{02-language-german}{
+	\usepackage[german]{isodate}
+}{}
+
+\toggletrue{05-dates}
