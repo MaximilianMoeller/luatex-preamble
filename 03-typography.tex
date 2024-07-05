@@ -16,8 +16,10 @@
 
 % Separates paragraphs by a vertical space instead of (or in addition to) indenting them.
 % To keep the indentation of new paragraphs, supply the ‘indent’ option.
-\usepackage{parskip}
-
+% In KOMA-class documents the `parskip`-option should be used
+\iftoggle{is-koma-class}{}{
+	\usepackage{parskip}
+}
 % For ‘inspirational’ quotes at the start of chapter or section.
 \usepackage{epigraph}
 
