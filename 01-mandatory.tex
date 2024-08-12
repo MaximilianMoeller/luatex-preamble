@@ -7,6 +7,14 @@
 % NewDocumentCommand and NewDocumentEnvironment
 \usepackage{xparse}
 
+% Allows silencing of error messages
+\usepackage[save]{silence}
+% (the `silence`-package is especially helpful if a package throws an error incorrectly.
+% In this case add a new filter to the ‘bugged’-filter-family, which is activated from now on)
+\ActivateFilters[bugged]
+% Family for warning- or error-messages I never want to see.
+\ActivateFilters[default-disabled]
+
 % Some packages behave differently (or not at all) with the beamer document class or a KOMA-Script-class.
 % The following toggles provide an easy and more explicit way for all subsequent headers to check
 % if they are loaded by a such a document.

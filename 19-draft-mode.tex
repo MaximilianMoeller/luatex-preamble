@@ -1,10 +1,34 @@
 % Provides: Helps during writing
 % Requires: /
 
-% Shows the label given by a `\label{…}`-command besides the labeled entity (in the margin)
-\usepackage{showlabels}
+% ~~ Convention ~~
+% The standard way to enable draft-mode is to give the `draft`-option to the document class (i.e., defining it globally)
+% and many packages support this option.
+% Likewise, the final version of a document is obtained by setting the `final` option globally.
+% A problem arrises if neither of these options is given.
+% The `final` version should be the default, however, not all packages respect this convention.
+% This preamble therefore enforces the `final`-mode in this scenario, but encourages its users to be explicit in the global options.
 
-% Show todo-nodes only in draft mode
-\usepackage[obeyDraft]{todonotes}
+% defines the `\ifdraft{…}{…}`-command
+% Conveniently, its semantics coincides with the above convention.
+\usepackage{ifdraft}
+
+\iftoggle{is-koma-class}{
+	% Do not show rulers in draft mode for KOMA-classes
+	\usepackage[draft=false]{scrlayer-scrpage}
+}{}
+
+% The `obeyDraft`-option makes todonotes behave according to the above convention.
+\usepackage[obeyDraft, tickmarkheight=1ex,textsize=footnotesize]{todonotes}
+% Warning message is bugged (i.e., appears even when marginparwidth is set to more than 2cm)
+% it is thus better to ignore the message and leave the formatting of the margin to the documentclass
+\WarningFilter[bugged]{todonotes}{The length marginparwidth is less than 2cm}
+
+% For all packages that do not follow the above convention
+\ifdraft{
+	% Shows the label given by a `\label{…}`-command besides the labeled entity (in the margin)
+	\usepackage[inline]{showlabels}
+}{}
+
 
 \toggletrue{19-draft-mode}

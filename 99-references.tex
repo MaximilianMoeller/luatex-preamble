@@ -2,6 +2,8 @@
 % Requires: /
 
 \usepackage{hyperref}
+% Yes, hyperref, you do nothing in draft mode, it’s ok.
+\WarningFilter[default-disabled]{hyperref}{Draft mode}
 \hypersetup{
 	unicode=true,
 	colorlinks=true, % style links by coloring them (instead of boxes)
