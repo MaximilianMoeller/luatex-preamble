@@ -11,8 +11,11 @@
 % Similar to ‘xspace’, provides ‘\xcomma’, ‘\xperiod’ and ‘\xperiodcomma’.
 \usepackage{xpunctuate}
 % Always follow i.e. and e.g. by a comma (Chicago Manual of Style says so)
-\newcommand\eg{e.g.\xcomma}
-\newcommand\ie{i.e.\xcomma}
+\iftoggle{02-language-english}{
+	\newcommand\eg{e.g.\xcomma}
+	\newcommand\ie{i.e.\xcomma}
+	\newcommand\wrt{w.r.t.\ }
+}{}
 
 % Separates paragraphs by a vertical space instead of (or in addition to) indenting them.
 % To keep the indentation of new paragraphs, supply the ‘indent’ option.
