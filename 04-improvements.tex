@@ -29,6 +29,9 @@
 	% Fine-grained control over ‘enumerate’ and ‘itemize’ environments.
 	% Either set options per environment or globally via ‘\setlist[…]{…}’
 	\usepackage{enumitem}
+	\setlist{noitemsep}
+	\setlist[1]{labelindent=\parindent}
+	\setlist[itemize]{leftmargin=*}
 }
 
 \toggletrue{04-improvements}
