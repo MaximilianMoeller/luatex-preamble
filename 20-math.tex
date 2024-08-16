@@ -36,10 +36,10 @@
 % Customize the font styles.
 % ‘dsserif’ for \mathbb also supports digits, e.g. for a unit vector: \mathbb{1}.
 \usepackage[cal=cm,
-scr=rsfso,
-% lucida fraktur is under commercial license, unfortunately
-frak=euler,
-bb=dsserif]{mathalpha}
+	scr=rsfso,
+	% lucida fraktur is under commercial license, unfortunately
+	frak=euler,
+	bb=dsserif]{mathalpha}
 
 % ~~~~ I tried using the ‘unicode-math’-package, but there were just too many problems, warnings and bugs (e.g. no \setminus in many fonts).
 % ~~~~ Maybe look into this again in a few years.
@@ -55,6 +55,7 @@ bb=dsserif]{mathalpha}
 \newcommand{\quantor}{\mathord{\reflectbox{\ensuremath{Q}}}}	% the generic quantor
 \NewDocumentCommand{\blankcell}{}{\ensuremath{\centernot b}}	% empty cell symbol of Turing machines
 \NewDocumentCommand{\questioneq}{}{\stackrel{\text{?}}{=}}		% = with a ‘?’ on top
+\NewDocumentCommand{\defeq}{}{\stackrel{\text{def.}}{=}}		% equal by definition
 \NewDocumentCommand{\contra}{}{\scalebox{1.25}{\lightning}}		% lightning symbol for contradiction
 
 %% Numbers
