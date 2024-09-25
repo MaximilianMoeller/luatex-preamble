@@ -58,6 +58,11 @@
 \NewDocumentCommand{\defeq}{}{\stackrel{\text{def.}}{=}}		% equal by definition
 \NewDocumentCommand{\contra}{}{\scalebox{1.25}{\lightning}}		% lightning symbol for contradiction
 
+\NewDocumentCommand{\st}{m}{\mathrel{}\middle#1\mathinner{}}		% growing middle in left/right-delimiter bracket with relational spacing (like \mid)
+% this answer https://tex.stackexchange.com/a/5550 suggestes \mathrel{} also for the space after the |
+% but for some reason this does not seem to work
+
+
 %% Numbers
 \NewDocumentCommand{\N}{}{\ensuremath{\mathbb{N}}\xspace}
 \NewDocumentCommand{\Z}{}{\ensuremath{\mathbb{Z}}\xspace}
