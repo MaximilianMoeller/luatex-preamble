@@ -21,7 +21,11 @@
 
 		% the definition counter by which all other counted environments will be counted
 		% needs to be defined by a different syntax -> cannot use \newoptionalnumberedtheorem{…}
-		\newtheorem{definition}		{Definition} [section]
+		% number by [chapter].[counter] in documentclasses with the \chapter command
+		% and by [section].[counter] in documentclasses without it
+		\ifdef\chapter
+		 {\newtheorem{definition}		{Definition} [chapter]}
+		 {\newtheorem{definition}		{Definition} [section]}
 		\newtheorem*{definition*}	{Definition}
 
 		\newoptionalnumberedtheorem{proposition}	{definition}	{Proposition}
