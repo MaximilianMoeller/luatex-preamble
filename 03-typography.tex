@@ -1,8 +1,12 @@
 % Provides: Font styling and spacing
 % Requires: /
 
-% Font selection and acces to system fonts
-\usepackage[no-math]{fontspec}
+\ifluatex
+	% Font selection and acces to system fonts
+	\usepackage[no-math]{fontspec}
+\else
+	\usepackage{fontenc}
+\fi
 
 % Provides the ‘\xspace’ command, which conditionally inserts a space, depending on the following symbol.
 % Needed by some other headers.
