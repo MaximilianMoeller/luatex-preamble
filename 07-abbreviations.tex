@@ -1,0 +1,13 @@
+% Provides the ‘\xspace’ command, which conditionally inserts a space, depending on the following symbol.
+% Needed by some other headers.
+\usepackage{xspace}
+
+% Similar to ‘xspace’, provides ‘\xcomma’, ‘\xperiod’ and ‘\xperiodcomma’.
+\usepackage{xpunctuate}
+% Always follow i.e. and e.g. by a comma (Chicago Manual of Style says so)
+\iftoggle{02-language-english}{
+	\newcommand\eg{e.g.\xcomma}
+	\newcommand\ie{i.e.\xcomma}
+	\newcommand\wrt{w.r.t.\ }
+}{}
+
