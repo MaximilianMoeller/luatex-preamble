@@ -52,8 +52,8 @@
 %\setmathfont{Stix Two Math}[range={scr, bfscr}, StylisticSet=1]
 
 %% Symbol definitions
-\newcommand{\quantor}{\mathord{\reflectbox{\ensuremath{Q}}}}	% the generic quantor
-\NewDocumentCommand{\blankcell}{}{\ensuremath{\centernot b}}	% empty cell symbol of Turing machines
+\newcommand{\quantor}{\mathord{\reflectbox{Q}}}	% the generic quantor
+\NewDocumentCommand{\blankcell}{}{\centernot b}	% empty cell symbol of Turing machines
 \NewDocumentCommand{\questioneq}{}{\stackrel{\text{?}}{=}}		% = with a ‘?’ on top
 \NewDocumentCommand{\defeq}{}{\stackrel{\text{def.}}{=}}		% equal by definition
 \NewDocumentCommand{\contra}{}{\scalebox{1.25}{\lightning}}		% lightning symbol for contradiction
@@ -64,14 +64,14 @@
 
 
 %% Numbers
-\NewDocumentCommand{\N}{}{\ensuremath{\mathbb{N}}\xspace}
-\NewDocumentCommand{\Z}{}{\ensuremath{\mathbb{Z}}\xspace}
-\NewDocumentCommand{\Q}{}{\ensuremath{\mathbb{Q}}\xspace}
-\NewDocumentCommand{\R}{}{\ensuremath{\mathbb{R}}\xspace}
-\NewDocumentCommand{\C}{}{\ensuremath{\mathbb{C}}\xspace}
+\NewDocumentCommand{\N}{}{\mathbb{N}}
+\NewDocumentCommand{\Z}{}{\mathbb{Z}}
+\NewDocumentCommand{\Q}{}{\mathbb{Q}}
+\NewDocumentCommand{\R}{}{\mathbb{R}}
+\NewDocumentCommand{\C}{}{\mathbb{C}}
 
 % use this for multi-letter variables/
-\newcommand{\var}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\var}[1]{\mathrm{#1}}
 \newcommand{\func}[1]{\operatorname{#1}}
 
 
